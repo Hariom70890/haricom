@@ -1,42 +1,62 @@
-import React from 'react';
-import { styled } from "@mui/system";
-import { HelpOutline } from "@mui/icons-material";
-
-const HelpContainer = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100%",
-});
-
-const HelpCard = styled("div")({
-  width: "80%",
-  maxWidth: "400px",
-  padding: "20px",
-  borderRadius: "8px",
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  background: "#fff",
-  textAlign: "center",
-});
-
-const IconContainer = styled("div")({
-  fontSize: "48px",
-  color: "#4CAF50",
-  marginBottom: "20px",
-});
-
+import React from "react";
+import { Box, Image, Flex, Text, Input,Divider } from "@chakra-ui/react";
+// import "../../Style/help.css";
+import search from '../Image/search.png';
+import peace from '../Image/peace.png'
 const Help = () => {
   return (
-    <HelpContainer>
-      <HelpCard>
-        <IconContainer>
-          <HelpOutline />
-        </IconContainer>
-        <h1>Page is under construction</h1>
-        {/* You can add more content or styling as needed */}
-      </HelpCard>
-    </HelpContainer>
+    <div>
+      <Box className='help_box' borderRadius={"20px"}>
+        <Text className="help_text" textAlign={"center"}>
+          Help 
+        </Text>
+       
+        
+        <Box padding={"12px"} margin={"auto"} width={"90%"} display={'flex'}>
+          <Input className="input" style={{backgroundColor:"#fff"}} />
+          <Image src={search} width={'30px'}/>
+        </Box>
+      </Box>
+      <br/>
+      <br/>
+      <Box style={{padding:"12px 0px"}} className='comment_box'>
+        <h2>18 collection</h2>
+        <Divider/>
+      </Box>
+      <Box style={{padding:"17px 0px"}}  className='comment_box'>
+        <h2 style={{fontSize:"20px",fontWeight:"600"}}>Interview Overiew</h2>
+       
+        <p className='p_help_tag'>See your coustomer service working</p>
+        <Divider/>
+      </Box>
+      <Box style={{padding:"17px 0px"}}  className='comment_box'>
+        <h2 style={{fontSize:"20px",fontWeight:"600"}}>help Desk</h2>
+       
+        <p className='p_help_tag'>See your coustomer service working</p>
+        <Divider/>
+      </Box>
+      <Box style={{padding:"17px 0px"}}  className='comment_box'>
+        <h2 style={{fontSize:"20px",fontWeight:"600"}}>Getting Started</h2>
+       
+        <p className='p_help_tag'>See your coustomer service working</p>
+        <Divider/>
+      </Box>
+      <Box style={{padding:"17px 0px"}}  className='comment_box'>
+        <h2 style={{fontSize:"20px",fontWeight:"600"}}>AI chatbot</h2>
+       
+        <p className='p_help_tag'>See your coustomer service working</p>
+        <Divider/>
+      </Box>
+      <Box style={{padding:"12px 0px"}}  className='comment_box'>
+        <h2 style={{fontSize:"20px",fontWeight:"600"}}>Productive Support</h2>
+        <Divider/>
+        <p className='p_help_tag'>See your coustomer service working</p>
+        <Divider/><br /><br /><br /><br />
+      </Box>
+      
+     
+    </div>
   );
-}
+};
 
 export default Help;
