@@ -8,7 +8,7 @@ import {
 import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 
 const Home = () => {
-  return (
+  return (  
     <Box
       borderRadius="25px"
       padding="20px"
@@ -92,6 +92,7 @@ const Home = () => {
           </p>
         </Text>
       </Box>
+      <br /><br /><br /><br />
     </Box>
   );
 };

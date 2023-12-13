@@ -16,6 +16,7 @@ function App() {
          <Navbar />
          <MainPage />
          <ChatComponent />
+        
       </>
    );
 }

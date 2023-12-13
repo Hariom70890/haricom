@@ -1,7 +1,5 @@
-// ChatComponent.js
 import React, { useState } from "react";
 import { styled } from "@mui/system";
-import ChatIcon from "@mui/icons-material/Chat";
 import Popover from "@mui/material/Popover";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -9,25 +7,44 @@ import Typography from "@mui/material/Typography";
 import Home from "./Home";
 import News from "./News";
 import Messages from "./Messages";
+import Help from "./Help";
+import HomeIcon from "@mui/icons-material/Home";
+import ChatIcon from "@mui/icons-material/Chat";
+import NewsIcon from "@mui/icons-material/Announcement";
+import HelpIcon from "@mui/icons-material/Help";
 
-// Styled components
 const ChatIconWrapper = styled("div")({
   position: "fixed",
   bottom: 16,
   right: 16,
-  color: "yellow",
   cursor: "pointer",
+  zIndex: 1000, // Ensure the chat icon is above other elements
 });
+
 
 const PopupContent = styled("div")({
   width: "400px",
-  padding: 16,
+  padding: "16px",
+  height: "100vh",
   border: "2px solid black",
   borderRadius: "20px",
-  boxShadow: "your-box-shadow-styles-here",
+  display: "flex",
+  flexDirection: "column",
+  overflowY: "auto",
+})
+
+
+const TabsContainer = styled("div")({
+  position: "fixed",
+  bottom: 15,
+  left: 850,
+  // width: "100%",
+  background: "blue",
+  color: "white",
+  padding: "0px 16px",
+  borderRadius: "2rem",
 });
 
-// ChatComponent
 const ChatComponent = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedTab, setSelectedTab] = useState(0);
@@ -68,36 +85,37 @@ const ChatComponent = () => {
         }}
       >
         <PopupContent>
-          <Tabs
-            value={selectedTab}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="standard" // Set variant to standard to fix tabs
-            scrollButtons="auto" // Set scrollButtons to auto if needed
-            style={{ minHeight: "48px" }} 
-          >
-            <Tab label="Home" />
-            <Tab label="Chat" />
-            <Tab label="News" />
-            <Tab label="Help" />
-          </Tabs>
+          {/* Content for each tab */}
           <Typography component="div" role="tabpanel" hidden={selectedTab !== 0}>
-            {/* Content for Home tab */}
             <Home />
           </Typography>
           <Typography component="div" role="tabpanel" hidden={selectedTab !== 1}>
-            {/* Content for Chat tab */}
             <Messages />
           </Typography>
           <Typography component="div" role="tabpanel" hidden={selectedTab !== 2}>
-            {/* Content for News tab */}
             <News />
           </Typography>
           <Typography component="div" role="tabpanel" hidden={selectedTab !== 3}>
-            {/* Content for Help tab */}
-            Help Content
+            <Help />
           </Typography>
+
+          {/* Tabs at the bottom */}
+          <TabsContainer>
+            <Tabs
+              value={selectedTab}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="white"
+              variant="standard"
+              scrollButtons="auto"
+              style={{ minHeight: "48px" }}
+            >
+              <Tab icon={<HomeIcon />} label="Home" />
+              <Tab icon={<ChatIcon />} label="Chat" />
+              <Tab icon={<NewsIcon />} label="News" />
+              <Tab icon={<HelpIcon />} label="Help" />
+            </Tabs>
+          </TabsContainer>
         </PopupContent>
       </Popover>
     </>

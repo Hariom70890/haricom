@@ -11,9 +11,11 @@ const Navbar = () => {
   const buttonStyle = {
     fontSize: "15px",
     fontWeight: "700",
+    width:"200px",
     lineHeight: "127%",
+    border:"2px solid white",
     backgroundColor: "#004ad9",
-    color: "#ffffff",
+    color: "white",
     position: "relative",
     alignItems: "center",
     borderRadius: "20px",
@@ -24,7 +26,7 @@ const Navbar = () => {
     padding: "0 1.5rem",
     borderRadius: "2rem",
     backgroundColor: "transparent",
-    color: "#fff",
+    color: "white",
     boxShadow: "inset 0 0 0 2px #fff",
   };
 
@@ -46,7 +48,7 @@ const Navbar = () => {
 
         <Stack
           flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
+          // justify={"flex-end"}
           direction={"row"}
           spacing={6}
         >
